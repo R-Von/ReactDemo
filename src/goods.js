@@ -1,5 +1,10 @@
 import React,{Component,Fragment} from 'react'
 import GoodsItem from './goodsItem'
+import Boss from './boss'
+import axios from 'axios'
+
+
+console.log(axios)
 
 class Goods extends Component{
     constructor(props){
@@ -21,6 +26,7 @@ class Goods extends Component{
                     />  
                     <button onClick={this.addItem}>add</button>      
                 </div> 
+                <Boss/>
                 <ul>
                    {
                        this.state.list.map((item,index)=>{
@@ -59,22 +65,35 @@ class Goods extends Component{
             list:list
         })
     }
-    componentWillMount(){
-        console.log('1-----组件即将挂载')
-    }
     componentDidMount(){
-        console.log('2-----组件完成挂载')
+        //在componentDidMount中进行ajax请求、
+        axios.get('https://api.github.com/search/repositories?q=language:javascript+language:css+language:html+stars:%3E=10000&sort=stars&order=desc&per_page=10')
+        .then(res=>{
+            console.log(res)
+            this.setState({
+                list:res.data.items
+            })
+        })
+        .catch(err=>{
+            console.log(err)
+        })
     }
-    shouldComponentUpdate(){
-        console.log('3-----组件发生改变前执行')
-        return true
-    }
-    componentWillUpdate(){
-        console.log('4----组件更新前执行')
-    }
-    componentDidUpdate(){
-        console.log('5----组件更新之后执行')
-    }
+    // componentWillMount(){
+    //     console.log('1-----组件即将挂载')
+    // }
+    // componentDidMount(){
+    //     console.log('2-----组件完成挂载')
+    // }
+    // shouldComponentUpdate(){
+    //     console.log('3-----组件发生改变前执行')
+    //     return true
+    // }
+    // componentWillUpdate(){
+    //     console.log('4----组件更新前执行')
+    // }
+    // componentDidUpdate(){
+    //     console.log('5----组件更新之后执行')
+    // }
 }
 
 export default Goods
