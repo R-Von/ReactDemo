@@ -4,9 +4,11 @@ import ReactDom from 'react-dom'
 // import Xiaojiejie from './xiaojiejie'
 // import Market from './market'
 // import Goods from './goods'
-import Todo from './todo'
+// import Todo from './todo'
 
-ReactDom.render(<Todo />,document.getElementById('root'))
+import Chart from './charts'
+
+ReactDom.render(<Chart />,document.getElementById('root'))
 
 // 自定义组件必须用大写字母开头 而jsx可以用小写字母开头
 
