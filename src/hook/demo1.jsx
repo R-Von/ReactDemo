@@ -9,6 +9,7 @@ class Example extends Component {
     const { state } = this
     return (
       <div>
+        <p>This is Normal</p>
         <p>U clicked {state.count} times</p>
         <button onClick={this.addCount}>Click me</button>
       </div>
