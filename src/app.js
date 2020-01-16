@@ -4,12 +4,15 @@ import React, { Component } from 'react'
 // import React from 'react'
 // const Component = React.Component
 import Examples from './hook/demo4.jsx'
+import HookExample from './hook/demo5.jsx'
 
 class App extends Component {
   render() {
     return (
       <div>
         <Examples />
+        ------------------------------
+        <HookExample />
       </div>
     )
   }
