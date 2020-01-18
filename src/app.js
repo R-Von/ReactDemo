@@ -9,12 +9,14 @@ import { BrowserRouter as Router , Route , Link } from 'react-router-dom'
 import Index from './hook/Index'
 import List from './hook/List'
 import Example4 from './hook/demo6'
+import ReeducerDemo from './hook/demo8'
+
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Example4 />
+        <ReeducerDemo />
         {/* <HookExample /> */}
         {/* <Router>
           <ul>
